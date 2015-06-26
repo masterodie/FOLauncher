@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <stdio.h>
 #include <conio.h>
 
 #include "CommandlineInterface.hpp"
@@ -16,18 +15,17 @@ int main()
     Application app;
     switch(choice) {
         case FALLOUT:
-            app = apps[FALLOUT-1];
+            apps[FALLOUT-1].run();
             break;
         case FALLOUT_LAUNCHER:
-            app = apps[FALLOUT_LAUNCHER-1];
+            apps[FALLOUT_LAUNCHER-1].run();
             break;
         case FOSE:
-            app = apps[FOSE-1];
+            apps[FOSE-1].run();
             break;
         case MOD_ORGANIZER:
-            app = apps[MOD_ORGANIZER-1];
+            apps[MOD_ORGANIZER-1].run();
             break;
     }
-    app.run();
     return 0;
 }
