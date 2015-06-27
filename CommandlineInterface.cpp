@@ -1,7 +1,7 @@
 #include <iostream>
 #include <conio.h>
 
-#include "CommandlineInterface.hpp"
+#include "CommandlineInterface.h"
 #include "constants.cpp"
 
 
