@@ -1,19 +1,15 @@
 VERSION = 0.0.1
 CC = /mingw32/bin/g++
-CFLAGS = -Wall -Wextra -g -DVERSION=\"$(VERSION)\"
+CFLAGS = -Wall -Wextra -g -Iinclude -DVERSION=\"$(VERSION)\"
 LDFLAGS = -static -static-libstdc++
 
-OBJ = Application.o CommandlineInterface.o main.o
+OBJ = lib/Application.o lib/CommandlineInterface.o main.o
 
 all: $(OBJ)
-	$(CC) $(CFLAGS) -o FalloutLauncher.exe $(OBJ) $(LDFLAGS)
+	$(CC) $(CFLAGS) -o dist/FalloutLauncher.exe $(OBJ) $(LDFLAGS)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $<
 
 fo3_dummy:
-	$(CC) $(CFLAGS) -o Fallout3.exe ../helloworld.cpp
-
-clean:
-	rm *.o *.exe *.out
-
+	$(CC) $(CFLAGS) -o dist/Fallout3.exe ../helloworld.cpp

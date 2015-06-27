@@ -2,13 +2,14 @@
 #include <string>
 #include <conio.h>
 #include <windows.h>
-#include <tclap/CmdLine.h>
 #include <vector>
 
-#include "CommandlineInterface.h"
-#include "Application.h"
-#include "constants.cpp"
-#include "helpers.h"
+#include "tclap/CmdLine.h"
+
+#include "lib/CommandlineInterface.h"
+#include "lib/Application.h"
+#include "lib/constants.cpp"
+#include "lib/helpers.h"
 
 using namespace std;
 
@@ -41,14 +42,14 @@ int main(int argc, char** argv)
 		TCLAP::SwitchArg debug_arg("d", "debug", "Debug output", cmd, false);
 		TCLAP::SwitchArg disable_mod_organizer_arg("", "disable-mo", "Disable Mod Organizer's virtual filesystem", cmd, false);
 		TCLAP::ValueArg<string> mod_organizer_profile_arg("p", "mod-organizer-profile", "Set Mod Organizer Profile", false, "Default", "string", cmd);
-		TCLAP::ValueArg<string> path_mod_organizer_arg("", "mod-organizer-path", "Set Path to ModOrganizer.exe", false, path_mod_organizer, "string", cmd);
-		TCLAP::ValueArg<string> path_fose_arg("", "fose-path", "Set Path to fose_loader.exe", false, path_fose, "string", cmd);
-		TCLAP::ValueArg<string> path_fo3_launcher_arg("", "launcher-path", "Set Path to FalloutLauncher.exe", false, path_fo3_launcher, "string", cmd);
-		TCLAP::ValueArg<string> path_fo3_arg("", "fallout-path", "Set Path to Fallout3.exe", false, path_fo3, "string", cmd);
-		TCLAP::SwitchArg start_mod_organizer_arg("m", "mod-organizer", "Start Mod Organizer", cmd, false);
-		TCLAP::SwitchArg start_fose_arg("s", "fose", "Start Fallout Script Extender", cmd, false);
-		TCLAP::SwitchArg start_fo3_launcher_arg("l", "launcher", "Start Fallout 3 Launcher", cmd, false);
-		TCLAP::SwitchArg start_fo3_arg("f", "fallout3", "Start Fallout 3", cmd, false);
+		TCLAP::ValueArg<string> path_mod_organizer_arg("m", "mod-organizer-path", "Set Path to ModOrganizer.exe", false, path_mod_organizer, "string", cmd);
+		TCLAP::ValueArg<string> path_fose_arg("s", "fose-path", "Set Path to fose_loader.exe", false, path_fose, "string", cmd);
+		TCLAP::ValueArg<string> path_fo3_launcher_arg("l", "launcher-path", "Set Path to FalloutLauncher.exe", false, path_fo3_launcher, "string", cmd);
+		TCLAP::ValueArg<string> path_fo3_arg("f", "fallout-path", "Set Path to Fallout3.exe", false, path_fo3, "string", cmd);
+		TCLAP::SwitchArg start_mod_organizer_arg("4", "mod-organizer", "Start Mod Organizer", cmd, false);
+		TCLAP::SwitchArg start_fose_arg("3", "fose", "Start Fallout Script Extender", cmd, false);
+		TCLAP::SwitchArg start_fo3_launcher_arg("2", "launcher", "Start Fallout 3 Launcher", cmd, false);
+		TCLAP::SwitchArg start_fo3_arg("1", "fallout3", "Start Fallout 3", cmd, false);
 		cmd.parse(argc, argv);
 
 		bool debug = debug_arg.getValue();
